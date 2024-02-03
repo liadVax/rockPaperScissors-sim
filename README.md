@@ -1,34 +1,46 @@
-## Usage
+# Particle Simulation App
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+## Overview
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+This web app allows you to simulate particles moving on a canvas with rock-paper-scissors rules applied upon collision. The goal is to observe particle interactions and team dynamics. You can customize the number of particles for each team and restart the simulation as needed.
+
+## Features
+
+- Particle collision with rock-paper-scissors rules.
+- Responsive canvas with dynamic resizing.
+- Controller for changing the number of particles.
+- Scoreboard to track team counts.
+- Winning modal when one team dominates.
+
+## Technologies Used
+
+- SolidJS (JavaScript framework)
+- CSS for styling
+- Global Data Provider for state management
+- Utilized classes for particle logic
+
+## Getting Started
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/particle-simulation-app.git
+```
+2. Navigate to the project folder:
 
 ```bash
-$ npm install # or pnpm install or yarn install
+cd particle-simulation-app
+```
+3. Install dependencies:
+
+```bash
+npm install
+```
+4. Run the app:
+
+```bash
+npm start
 ```
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+5. The app will be accessible at http://localhost:3000.
 
-## Available Scripts
 
-In the project directory, you can run:
-
-### `npm run dev` or `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
