@@ -1,0 +1,19 @@
+body {
+  background: white;
+  user-select: none;
+  min-width: 800px;
+  min-height: 600px;
+}
+
+.Input {
+  display: inline-block;
+  padding: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 75px;
+}
+
+.Label {
+  display: block;
+  width: 40px;
+}
