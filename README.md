@@ -1,4 +1,4 @@
-# Particle Simulation App
+# Rock🤘 Paper📄 Scissors✂️ - Particle Simulation App
 
 ## Overview
 
