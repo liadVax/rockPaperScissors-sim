@@ -1,8 +1,11 @@
+html {
+  min-width: 990px;
+  min-height: 600px;
+}
+
 body {
   background: white;
   user-select: none;
-  min-width: 800px;
-  min-height: 600px;
 }
 
 .Input {

@@ -4,6 +4,7 @@ const Header: Component = () => {
   return (
     <header
       style={`
+            width: 100%;
             background: rgb(240,128,128);
             background: linear-gradient(270deg, rgba(240,128,128,1) 0%,
              rgba(255,250,205,1) 50%,
