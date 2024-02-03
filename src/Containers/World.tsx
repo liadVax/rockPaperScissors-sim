@@ -172,7 +172,7 @@ const World: Component = () => {
         flex-direction:column;
         align-items:center;
         justify-content:space-around;
-        margin-top:12px;`}
+        margin:12px 0px;`}
     >
       <div
         style={`display: flex;
