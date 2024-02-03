@@ -18,7 +18,7 @@ const Header: Component = () => {
             border-bottom:8px double black;
           `}
       >
-        ROCK ⛰️ PAPER 📄 SCISSORS ✂️
+        ROCK 🤘 PAPER 📄 SCISSORS ✂️
         <br />
         BATTLE-ROYAL!
       </h1>

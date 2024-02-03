@@ -57,7 +57,7 @@ export type tVector2D = {
 };
 
 export enum eTeams {
-  ROCK = 0, //"⛰️",
+  ROCK = 0, //"🤘",
   PAPER = 1, //"📄",
   SCISSORS = 2, //"✂️",
 }
@@ -70,7 +70,7 @@ export type tWindowSize = {
 export type tTeamsCnt = { ROCK: number; PAPER: number; SCISSORS: number };
 
 // DEFINITIONS AND CONSTANTS
-export const TEAM_SYM = ["⛰️", "📄", "✂️"];
+export const TEAM_SYM = ["🤘", "📄", "✂️"];
 export const COLORS = ["LightGreen", "LemonChiffon", "LightCoral"];
 
 export const MIN_W = 800;

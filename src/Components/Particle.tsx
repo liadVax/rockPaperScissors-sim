@@ -30,7 +30,7 @@ export const Particle: Component<ParticleProps> = (props) => {
   `}
     >
       <Switch>
-        <Match when={props.team === eTeams.ROCK}>⛰️</Match>
+        <Match when={props.team === eTeams.ROCK}>🤘</Match>
         <Match when={props.team === eTeams.PAPER}>📄</Match>
         <Match when={props.team === eTeams.SCISSORS}>✂️</Match>
       </Switch>

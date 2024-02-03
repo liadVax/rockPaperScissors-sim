@@ -138,7 +138,7 @@ const World: Component = () => {
       // Check Winner
       if (winner() === undefined) {
         if (score.ROCK === teamsTotal()) {
-          setWinner("⛰️ ROCK ⛰️");
+          setWinner("🤘 ROCK 🤘");
           setIsOpen(true);
         } else if (score.PAPER === teamsTotal()) {
           setWinner("📄 PAPER 📄");

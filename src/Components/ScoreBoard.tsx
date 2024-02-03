@@ -40,7 +40,7 @@ const ScoreBoard: Component<{
                 style={`
                       background:${COLORS[inx()]};
                       width:${
-                        (props.teamCnt[t == "⛰️" ? "ROCK" : t == "📄" ? "PAPER" : "SCISSORS"] /
+                        (props.teamCnt[t == "🤘" ? "ROCK" : t == "📄" ? "PAPER" : "SCISSORS"] /
                           props.total) *
                         100
                       }%;
@@ -52,7 +52,7 @@ const ScoreBoard: Component<{
                       border-right:3px solid black;
                       `}
               >
-                {props.teamCnt[t == "⛰️" ? "ROCK" : t == "📄" ? "PAPER" : "SCISSORS"]}
+                {props.teamCnt[t == "🤘" ? "ROCK" : t == "📄" ? "PAPER" : "SCISSORS"]}
               </div>
             </div>
           );

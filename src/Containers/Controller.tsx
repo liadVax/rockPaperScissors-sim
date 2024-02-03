@@ -38,7 +38,7 @@ const Controller: Component<{ handleRestart: () => void }> = (props) => {
         </p>
         <div style={`display:flex; align-items:center;`}>
           <label class={styles.Label} for="rock">
-            ⛰️:
+            🤘:
           </label>
           <input
             required
