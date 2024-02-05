@@ -1,7 +1,7 @@
 import { Component, createSignal, Show } from "solid-js";
 
 const Footer: Component = () => {
-  const [isHidden, setHidden] = createSignal(false);
+  const [isHidden, setHidden] = createSignal(true);
 
   const toggleVisibility = () => {
     setHidden(!isHidden());
