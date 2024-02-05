@@ -69,14 +69,23 @@ const World: Component = () => {
     cParticlesList.splice(0, cParticlesList.length);
     const initParticlesView: ParticleProps[] = [];
 
-    const particleSector: tBoundry[] = divideCanvasToSectors(
+    let particleSector: tBoundry[] = divideCanvasToSectors(
       3,
       globalData.windowSize().width,
       globalData.windowSize().height
     );
-    createParticles(eTeams.ROCK, globalData.teamCnt().ROCK, particleSector[0]);
-    createParticles(eTeams.PAPER, globalData.teamCnt().PAPER, particleSector[1]);
-    createParticles(eTeams.SCISSORS, globalData.teamCnt().SCISSORS, particleSector[2]);
+
+    let team: eTeams = eTeams.ROCK;
+    while (particleSector.length) {
+      const i = Math.floor(Math.random() * particleSector.length);
+      createParticles(
+        team,
+        globalData.teamCnt()[eTeams[team] as keyof tTeamsCnt],
+        particleSector[i]
+      );
+      particleSector.splice(i, 1);
+      team++;
+    }
 
     cParticlesList.map((p: CParticle, i: number) =>
       initParticlesView.push({
@@ -190,7 +199,7 @@ const World: Component = () => {
                  flex-direction:row;
                  align-items:flex-start;
                  flex-basis:0;
-                 flex-wrap:no-wrap;
+                 flex-wrap:nowrap;
                  `}
         >
           <Canvas width={globalData.windowSize().width} height={globalData.windowSize().height}>

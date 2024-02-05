@@ -6,7 +6,7 @@ const H = 1000;
 const TEAM_AMT = 100;
 const TOATL = TEAM_AMT * 3;
 const RADI = 15;
-const GAMES = 1000;
+const GAMES = 10000;
 let cParticlesList: CParticle[] = [];
 const winnerCnt = [0, 0, 0];
 
@@ -23,9 +23,15 @@ const runSim = () => {
     cParticlesList = [];
 
     const particleSector: tBoundry[] = divideCanvasToSectors(3, W, H);
-    createParticles(eTeams.ROCK, TEAM_AMT, particleSector[0]);
-    createParticles(eTeams.PAPER, TEAM_AMT, particleSector[1]);
-    createParticles(eTeams.SCISSORS, TEAM_AMT, particleSector[2]);
+
+    let team: eTeams = eTeams.ROCK;
+    while (particleSector.length) {
+      const i = Math.floor(Math.random() * particleSector.length);
+      createParticles(team, TEAM_AMT, particleSector[i]);
+      particleSector.splice(i, 1);
+      team++;
+    }
+
     let finish = false;
     while (!finish) {
       const score: tTeamsCnt = { ROCK: 0, PAPER: 0, SCISSORS: 0 };
