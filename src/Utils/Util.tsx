@@ -70,7 +70,6 @@ export type tWindowSize = {
 export type tTeamsCnt = { ROCK: number; PAPER: number; SCISSORS: number };
 
 // DEFINITIONS AND CONSTANTS
-export const TEAM_SYM = ["🤘", "📄", "✂️"];
 export const COLORS = ["LightGreen", "LemonChiffon", "LightCoral"];
 
 export const MIN_W = 800;

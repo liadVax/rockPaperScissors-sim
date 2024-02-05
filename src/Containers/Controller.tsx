@@ -100,7 +100,6 @@ const Controller: Component<{ handleRestart: () => void }> = (props) => {
           RESTART
         </button>
       </form>
-
       <button
         style={`padding:8px;
                 width:125px;

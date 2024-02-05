@@ -1,11 +1,12 @@
 import { Component, For } from "solid-js";
-import { COLORS, tTeamsCnt, TEAM_SYM } from "../Utils/Util";
+import { COLORS, tTeamsCnt } from "../Utils/Util";
 
 const ScoreBoard: Component<{
   teamCnt: tTeamsCnt;
   total: number;
   width: number;
 }> = (props) => {
+  const teamSymbols = { ROCK: "🤘", PAPER: "📄", SCISSORS: "✂️" };
   return (
     <div
       style={`background:AliceBlue;
@@ -15,8 +16,8 @@ const ScoreBoard: Component<{
       border-style:ridge ;
       border-color:black;`}
     >
-      <For each={TEAM_SYM}>
-        {(t, inx) => {
+      <For each={Object.entries(teamSymbols)}>
+        {([k, v], inx) => {
           return (
             <div
               style={`
@@ -34,15 +35,13 @@ const ScoreBoard: Component<{
                         background:${COLORS[inx()]};
                         text-align:left;`}
               >
-                {t}
+                {v}
               </div>
               <div
                 style={`
                       background:${COLORS[inx()]};
                       width:${
-                        (props.teamCnt[t == "🤘" ? "ROCK" : t == "📄" ? "PAPER" : "SCISSORS"] /
-                          props.total) *
-                        100
+                        (props.teamCnt[k.toString() as keyof tTeamsCnt] / props.total) * 100
                       }%;
                       min-width:15px;
                       text-align:right;
@@ -52,7 +51,7 @@ const ScoreBoard: Component<{
                       border-right:3px solid black;
                       `}
               >
-                {props.teamCnt[t == "🤘" ? "ROCK" : t == "📄" ? "PAPER" : "SCISSORS"]}
+                {props.teamCnt[k.toString() as keyof tTeamsCnt]}
               </div>
             </div>
           );
