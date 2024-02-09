@@ -20,7 +20,7 @@ export class CParticle {
     peice: eTeams
   ) {
     this.id = id;
-    if (radi > 15) this.diameter = radi * 2;
+    if (radi > 1) this.diameter = radi * 2;
     this.pos = CVector2D.randomVector(
       spwanBoundaries.minX + this.diameter,
       spwanBoundaries.maxX - this.diameter,

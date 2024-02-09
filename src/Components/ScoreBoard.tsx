@@ -4,16 +4,14 @@ import { COLORS, tTeamsCnt } from "../Utils/Util";
 const ScoreBoard: Component<{
   teamCnt: tTeamsCnt;
   total: number;
-  width: number;
 }> = (props) => {
   const teamSymbols = { ROCK: "🤘", PAPER: "📄", SCISSORS: "✂️" };
   return (
     <div
       style={`background:AliceBlue;
-      width:${props.width}px;
       border-width:6px;
       margin:2px 0px;
-      border-style:ridge ;
+      border-style:ridge;
       border-color:black;`}
     >
       <For each={Object.entries(teamSymbols)}>
@@ -21,7 +19,7 @@ const ScoreBoard: Component<{
           return (
             <div
               style={`
-                width:${props.width}px;
+
                 border:0px;
                 border-bottom:1px;
                 border-style:solid;
@@ -31,7 +29,7 @@ const ScoreBoard: Component<{
             >
               <div
                 style={`width:30px;
-                padding:1px 0px;
+                        padding:1px 0px;
                         background:${COLORS[inx()]};
                         text-align:left;`}
               >

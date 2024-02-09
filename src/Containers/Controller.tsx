@@ -23,7 +23,7 @@ const Controller: Component<{ handleRestart: () => void }> = (props) => {
               border:6px ridge black;
               background:AliceBlue;
               text-align:center;
-              margin:0px 2px;`}
+              margin:2px;`}
     >
       <form
         onSubmit={(e) => {

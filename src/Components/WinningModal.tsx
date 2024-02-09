@@ -3,6 +3,7 @@ import { Component, Show } from "solid-js";
 const WinningModal: Component<{
   isOpen: boolean;
   text: string | undefined;
+  handleClose: () => void;
 }> = (props) => {
   return (
     <Show when={props.isOpen && props.text !== undefined} fallback={null}>
@@ -26,6 +27,22 @@ const WinningModal: Component<{
         `}
       >
         <div>
+          <button
+            style={`
+          position:absolute;
+          right:0;
+          top:0;
+          padding:2px; 
+          background: none;
+          border: none;
+          cursor: pointer;
+          font-size: 16px;
+          outline: none;
+        `}
+            onClick={props.handleClose}
+          >
+            {"✖️"}
+          </button>
           <p style={`text-align:center;font-weight:bold;font-size:22px;word-spacing:2px`}>
             {props.text}
             <br />

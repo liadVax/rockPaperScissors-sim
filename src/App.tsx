@@ -6,13 +6,13 @@ import Footer from "./Containers/Footer";
 
 const App: Component = () => {
   return (
-    <div style={"display:flex;flex-direction:column;justify-content:space-around;"}>
+    <>
       <Header />
       <GlobalDataProvider>
         <World />
       </GlobalDataProvider>
       <Footer />
-    </div>
+    </>
   );
 };
 

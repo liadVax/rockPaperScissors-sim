@@ -15,7 +15,8 @@ import {
   eTeams,
   MIN_H,
   MIN_W,
-  RADI,
+  RADI_WIDE,
+  RADI_NARROW,
   tBoundry,
   tTeamsCnt,
 } from "../Utils/Util";
@@ -26,6 +27,7 @@ import Canvas from "../Components/Canvas";
 import Controller from "./Controller";
 import ScoreBoard from "../Components/ScoreBoard";
 import WinningModal from "../Components/WinningModal";
+import styles from "../App.module.css";
 
 const World: Component = () => {
   // State and signals
@@ -43,9 +45,12 @@ const World: Component = () => {
 
   // Handle window resize
   const handleResize = () => {
-    const width = window.innerWidth * 0.7 < MIN_W ? MIN_W : window.innerWidth * 0.7;
-    const height = window.innerHeight * 0.65 < MIN_H ? MIN_H : window.innerHeight * 0.65;
-
+    let width = MIN_W;
+    let height = MIN_H;
+    if (window.innerWidth > 425) {
+      width = window.innerWidth * 0.7 < MIN_W ? MIN_W : window.innerWidth * 0.7;
+      height = window.innerHeight * 0.65 < MIN_H ? MIN_H : window.innerHeight * 0.65;
+    }
     globalData.setWindowSize({ width, height });
   };
 
@@ -54,7 +59,7 @@ const World: Component = () => {
     for (let i = 0; i < amount; i++) {
       const p: CParticle = new CParticle(
         i,
-        RADI,
+        window.innerWidth <= 425 ? RADI_NARROW : RADI_WIDE,
         particleSector,
         globalData.windowSize().width,
         globalData.windowSize().height,
@@ -175,47 +180,26 @@ const World: Component = () => {
   });
 
   return (
-    <div
-      style={`
-        display: flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:space-around;
-        margin:12px 0px;`}
-    >
-      <div
-        style={`display: flex;
-               flex-direction: column;
-               align-items: strech;
-               justify-content: center;`}
-      >
-        <ScoreBoard
-          teamCnt={globalData.teamCnt()}
-          total={teamsTotal()}
-          width={globalData.windowSize().width}
-        />
-        <div
-          style={`display:flex;
-                 flex-direction:row;
-                 align-items:flex-start;
-                 flex-basis:0;
-                 flex-wrap:nowrap;
-                 `}
-        >
-          <Canvas width={globalData.windowSize().width} height={globalData.windowSize().height}>
-            <For each={particlesView()}>
-              {(p) => {
-                return <Particle id={p.id} dim={p.dim} color={p.color} team={p.team} pos={p.pos} />;
-              }}
-            </For>
-          </Canvas>
-          <div>
-            <Controller handleRestart={InitParticles} />
-          </div>
-        </div>
+    <main class={styles.CanvasWrapper}>
+      <div class={styles.Canvas}>
+        <ScoreBoard teamCnt={globalData.teamCnt()} total={teamsTotal()} />
+        <Canvas width={globalData.windowSize().width} height={globalData.windowSize().height}>
+          <For each={particlesView()}>
+            {(p) => {
+              return <Particle id={p.id} dim={p.dim} color={p.color} team={p.team} pos={p.pos} />;
+            }}
+          </For>
+        </Canvas>
       </div>
-      <WinningModal isOpen={isOpen()} text={winner()} />
-    </div>
+      <Controller handleRestart={InitParticles} />
+      <WinningModal
+        isOpen={isOpen()}
+        handleClose={() => {
+          setIsOpen(false);
+        }}
+        text={winner()}
+      />
+    </main>
   );
 };
 export default World;

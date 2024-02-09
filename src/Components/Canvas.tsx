@@ -7,7 +7,8 @@ const Canvas: Component<{
 }> = (props) => {
   return (
     <div
-      style={`width:${props.width}px;
+      style={`
+              width:${props.width}px;
               height:${props.height}px;
               border:6px ridge black;
               background: rgb(255,255,255);

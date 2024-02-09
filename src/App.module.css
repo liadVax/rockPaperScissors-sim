@@ -1,11 +1,10 @@
-html {
-  min-width: 990px;
-  min-height: 600px;
-}
-
+html,
 body {
   background: white;
   user-select: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .Input {
@@ -19,4 +18,37 @@ body {
 .Label {
   display: block;
   width: 40px;
+}
+
+.CanvasWrapper {
+  padding-bottom: 200px; /* Height of the footer */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 0;
+  flex-wrap: nowrap;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
+}
+
+.Canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-content: center;
+}
+
+.Header {
+  text-align: center;
+  line-height: 150%;
+  margin: 0;
+  padding: 10px;
+  word-spacing: 4px;
+  border-bottom: 8px double black;
+  font-size: 34px;
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
 }

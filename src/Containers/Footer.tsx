@@ -14,7 +14,7 @@ const Footer: Component = () => {
          justify-content: center;
          align-items: center;
          text-align: center;
-         padding: 10px;
+         padding:12px 0px;
          background-color: #f0f0f0;
          position: fixed;
          bottom: 0;
@@ -27,11 +27,11 @@ const Footer: Component = () => {
           position:absolute;
           right:0;
           top:0;
-          padding:0px 22px 0px 2px ; 
+          padding:2px; 
           background: none;
           border: none;
           cursor: pointer;
-          font-size: 14px;
+          font-size: 16px;
           outline: none;
         `}
         onClick={toggleVisibility}
@@ -39,7 +39,7 @@ const Footer: Component = () => {
         {isHidden() ? "✖️" : "➕"}
       </button>
       <Show when={isHidden()}>
-        <p style={"font-size: 14px; width: 80%; margin-right: 10px;"}>
+        <p style={"font-size: 14px; width: 80%; margin-right: 10px;text-align:center;"}>
           <i>
             In an experiment consisted of 10,000 games with 300 randomly moving particles (100 for
             each Rock, Paper, and Scissors) on a 1000x1000 canvas, the following outcomes were:

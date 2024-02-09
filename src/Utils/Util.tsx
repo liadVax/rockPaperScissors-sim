@@ -72,6 +72,7 @@ export type tTeamsCnt = { ROCK: number; PAPER: number; SCISSORS: number };
 // DEFINITIONS AND CONSTANTS
 export const COLORS = ["LightGreen", "LemonChiffon", "LightCoral"];
 
-export const MIN_W = 800;
-export const MIN_H = 600;
-export const RADI = 15;
+export const MIN_W = 325;
+export const MIN_H = 475;
+export const RADI_WIDE = 15;
+export const RADI_NARROW = 10;

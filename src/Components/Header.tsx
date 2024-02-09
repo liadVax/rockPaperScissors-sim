@@ -1,5 +1,5 @@
 import { Component } from "solid-js";
-
+import styles from "../App.module.css";
 const Header: Component = () => {
   return (
     <header
@@ -10,15 +10,7 @@ const Header: Component = () => {
              rgba(255,250,205,1) 50%,
               rgba(144,238,144,1) 100%);`}
     >
-      <h1
-        style={`text-align:center; 
-            line-height:150%;
-            margin:0;
-            padding:10px; 
-            word-spacing:4px;
-            border-bottom:8px double black;
-          `}
-      >
+      <h1 class={styles.Header}>
         ROCK 🤘 PAPER 📄 SCISSORS ✂️
         <br />
         BATTLE-ROYAL!
